@@ -1,0 +1,114 @@
+#maskNotfound.done path{
+	  fill:var(--main-color);/*塗りの色*/
+	  fill-opacity: 1;/*透過1で見える状態*/
+	  stroke: none;/*線の色なし*/
+	}
+
+.sub-body{
+  min-height:50vh;
+	transform:translateY(-50px);
+}
+.sub-top{
+  position:relative;
+}
+.top-bar{
+  height:80px;
+  background-color:#dedede;
+  /* background-color:yellow; */
+}
+.logo-div a{
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.sub-top-text{
+  height:400px;
+  background-color:#dedede;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+
+}
+.sub-top-text h1{
+  font-size:3rem;
+  transform:  translateY(-50px);
+}
+.sub-top-text p{
+  font-size:1rem;
+  transform:  translateY(-50px);
+}
+.sub-body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  margin:0 auto 100px;
+}
+.sub-body img{
+  /* height:400px; */
+}
+.center-title{
+	text-align:center;
+	margin-top:50px;
+
+}
+.center-title h1{
+	font-size:2.5rem;
+	border-bottom:10px solid var(--accent-color);
+	width:40vw;
+	margin:auto;
+	padding:0;
+	line-height:35px;
+	animation: tittle 4s infinite;
+}
+
+@keyframes tittle {
+
+    50% {
+			transform:scale(1.05);
+    }
+
+
+		}
+
+}
+.center-title h2{
+	font-size:1.3rem;
+	font-weight:200;
+}
+
+.footer{
+	margin-top:100px;
+}
+@media screen and (max-width: 959px) {
+  .menu-ul{
+    display:none;
+  }
+}
+@media screen and (max-width: 480px) {
+  .sub-body{
+    min-height:30vh;
+		padding-bottom:100px;
+  }
+  .sub-top-text{
+    height:300px;
+  }
+  .sub-top-text h1{
+    font-size:2rem;
+  }
+  .sub-top-text p{
+    font-size:0.7rem;
+  }
+  .sub-body img{
+    /* height:200px; */
+  }
+	.center-title{
+		margin-top:100px;
+	}
+	.center-title h1{
+		font-size:2rem;
+		width:50vw;
+	}
+}

@@ -1,0 +1,17 @@
+<svg id="コンポーネント_1_5" data-name="コンポーネント 1 – 5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="319" height="319" viewBox="0 0 319 319">
+  <defs>
+    <filter id="パス_17" x="0" y="0" width="319" height="319" filterUnits="userSpaceOnUse">
+      <feOffset dx="10" dy="10" input="SourceAlpha"/>
+      <feGaussianBlur result="blur"/>
+      <feFlood flood-opacity="0.161"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="グループ_4" data-name="グループ 4">
+    <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#パス_17)">
+      <path id="パス_17-2" data-name="パス 17" d="M39.354,0H269.646A39.354,39.354,0,0,1,309,39.354V269.646A39.354,39.354,0,0,1,269.646,309H39.354A39.354,39.354,0,0,1,0,269.646V39.354A39.354,39.354,0,0,1,39.354,0Z" fill="#c7c7c7"/>
+    </g>
+    <path id="パス_16" data-name="パス 16" d="M37.828,0H231.172A37.828,37.828,0,0,1,269,37.828V231.172A37.828,37.828,0,0,1,231.172,269H37.828A37.828,37.828,0,0,1,0,231.172V37.828A37.828,37.828,0,0,1,37.828,0Z" transform="translate(20 20)" fill="#f5f5f5"/>
+  </g>
+</svg>

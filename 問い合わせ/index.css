@@ -1,0 +1,11 @@
+.contact-btn{
+  background-color:#49AC00;
+  color:white;
+}
+.btn-div-center a:visited{
+  text-decoration:none;
+  color:var(--white-color);
+}
+.btn-div-center a:link{
+  text-decoration:none;
+  color:var(--white-color);
