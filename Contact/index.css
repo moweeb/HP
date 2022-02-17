@@ -2,15 +2,7 @@
 	width:500px;
 	position:relative;
 }
-.contact-body::before{
-	position:absolute;
-	content:"";
-	top:0;
-	right:0;
-	width:100px;
-	height:100px;
-	background-image:url("../image/icon.png");
-}
+
 .m-form-text {
     height: 3em;
     width: 100%;
