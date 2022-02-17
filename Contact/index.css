@@ -1,5 +1,15 @@
 .contact-body{
 	width:500px;
+	position:relative;
+}
+.contact-body::before{
+	position:absolute;
+	content:"";
+	top:0;
+	right:0;
+	width:100px;
+	height:100px;
+	background-image:url("../image/icon.png");
 }
 .m-form-text {
     height: 3em;
@@ -12,7 +22,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 		transition:0.5s;
-		font-size:1.1em;
+		font-size:1.3em;
 }
 
 .m-form-text:focus {
@@ -33,7 +43,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     resize: vertical;
-		font-size:1.1em;
+		font-size:1.4em;
 
 }
 
