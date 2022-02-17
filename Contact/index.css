@@ -1,6 +1,8 @@
 .contact-body{
 	width:500px;
+	position:relative;
 }
+
 .m-form-text {
     height: 3em;
     width: 100%;
@@ -12,7 +14,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
 		transition:0.5s;
-		font-size:1.1em;
+		font-size:1.3em;
 }
 
 .m-form-text:focus {
@@ -33,7 +35,7 @@
     -webkit-appearance: none;
     -moz-appearance: none;
     resize: vertical;
-		font-size:1.1em;
+		font-size:1.4em;
 
 }
 

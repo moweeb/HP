@@ -6,6 +6,13 @@ if( isset($_POST['back']) && $_POST['back'] ){
 	// 何もしない
 } else if( isset($_POST['confirm']) && $_POST['confirm'] ){
 	// 確認画面
+
+	if( mb_strlen($_POST['incName']) > 100 ){
+		$errmessage[] = "お名前は100文字以内にしてください";
+	}
+	$_SESSION['incName']	= htmlspecialchars($_POST['incName'], ENT_QUOTES);
+
+
 	if( !$_POST['fullname'] ) {
 		$errmessage[] = "お名前を入力してください";
 	} else if( mb_strlen($_POST['fullname']) > 100 ){
@@ -49,7 +56,8 @@ if( isset($_POST['back']) && $_POST['back'] ){
     $mode         = 'input';
   } else {
 	  $message = "お問い合わせを受け付けました \r\n"
-	             . "名前: " . $_SESSION['fullname'] . "\r\n"
+							 . "会社名: " . $_SESSION['incName'] . "\r\n"
+	             . "お名前: " . $_SESSION['fullname'] . "\r\n"
 	             . "email: " . $_SESSION['email'] . "\r\n"
 	             . "お問い合わせ内容:\r\n"
 	             . preg_replace( "/\r\n|\r|\n/", "\r\n", $_SESSION['message'] );
@@ -65,6 +73,7 @@ if( isset($_POST['back']) && $_POST['back'] ){
 	  $mode     = 'send';
   }
 } else {
+	$_SESSION['incName'] = "";
 	$_SESSION['fullname'] = "";
 	$_SESSION['email']    = "";
 	$_SESSION['message']  = "";
@@ -108,7 +117,7 @@ if( isset($_POST['back']) && $_POST['back'] ){
     <!-- <li><a href="../NotFound/index.html" class="menu-item"><span>About</span></a></li> -->
     <li><a href="../Service/index.html" class="menu-item"><span>Service</span></a></li>
     <li><a href="../Menu/index.html" class="menu-item"><span>Menu</span></a></li>
-    <li><a href="../Works/index.html" class="menu-item"><span>Works</span></a></li>
+    <li><a href="https://blog.moweeb.com" target="_blank" class="menu-item"><span>Blog</span></a></li>
     <li><a href="index.php" class="menu-item currentPage"><span>Contact</span></a></li>
     </ul>
     </div>
@@ -150,10 +159,10 @@ if( isset($_POST['back']) && $_POST['back'] ){
             <li class="menu-item-s"><span>価格表</span></li>
           </div>
           </a>
-          <a href="../Works/index.html">
+          <a href="https://blog.moweeb.com" target="_blank" >
           <div class="menu-item">
-            <li class="menu-item-l"><span>WORKS</span></li>
-            <li class="menu-item-s"><span>制作事例</span></li>
+            <li class="menu-item-l"><span>BLOG</span></li>
+            <li class="menu-item-s"><span>ブログ</span></li>
           </div>
           </a>
           <a href="index.php">
@@ -183,6 +192,11 @@ if( isset($_POST['back']) && $_POST['back'] ){
 
         <form action="./index.php" method="post">
 
+				<div class="input-name contact-contents">
+	        <h2>会社名</h2>
+	        <input type="text" name="incName" value="<?php echo $_SESSION['incName'] ?>" class="m-form-text" />
+	      </div>
+
         <div class="input-name contact-contents">
           <h2 class="required-h2">お名前</h2>
           <input type="text" name="fullname" value="<?php echo $_SESSION['fullname'] ?>" class="m-form-text"  />
@@ -192,10 +206,7 @@ if( isset($_POST['back']) && $_POST['back'] ){
           <h2 class="required-h2">メールアドレス</h2>
           <input type="text" name="email" value="<?php echo $_SESSION['email'] ?>" class="m-form-text" />
         </div>
-        <!-- <div class="input-name contact-contents">
-          <h2>御社様名</h2>
-          <input type="text" name="incName" value="" class="m-form-text" />
-        </div> -->
+
         <div class="textarea contact-contents">
           <h2 class="required-h2">お問い合わせ内容</h2>
           <textarea name="message" class="m-form-textarea"><?php echo $_SESSION['message'] ?></textarea>
@@ -218,7 +229,9 @@ if( isset($_POST['back']) && $_POST['back'] ){
         <!-- 確認画面 -->
         <form action="./index.php" method="post">
           <input type="hidden" name="token" value="<?php echo $_SESSION['token']; ?>">
-          <h2 class="form-confirm-h2">名前</h2> <br>
+					<h2 class="form-confirm-h2">会社名</h2> <br>
+					<h2><?php echo $_SESSION['incName'] ?></h2> <br>
+          <h2 class="form-confirm-h2">お名前</h2> <br>
           <h2><?php echo $_SESSION['fullname'] ?></h2> <br>
           <h2 class="form-confirm-h2">Eメール</h2><br>
           <h2><?php echo $_SESSION['email'] ?></h2> <br>
@@ -269,16 +282,16 @@ if( isset($_POST['back']) && $_POST['back'] ){
         <a href="../index.html"><div class="en-row-content">TOP</div></a>
         <!-- <a href="../NotFound/index.html"><div class="en-row-content">ABOUT</div></a> -->
         <a href="../Service/index.html"><div class="en-row-content">SERVICE</div></a>
-        <a href="../Menu/index.html"><div class="en-row-content">WORKS</div></a>
-        <a href="../Works/index.html"><div class="en-row-content">MENU</div></a>
+				<a href="../Works/index.html"><div class="en-row-content">MENU</div></a>
+        <a href="https://blog.moweeb.com" target="_blank" ><div class="en-row-content">BLOG</div></a>
         <a href="index.php"><div class="en-row-content currentPage">CONTACT</div></a>
       </div>
       <div class="ja-row">
         <a href="../index.html"><div class="ja-row-content">トップ</div></a>
         <!-- <a href="../NotFound/index.html"><div class="ja-row-content">Moweebについて</div></a> -->
         <a href="../Service/index.html"><div class="ja-row-content">サービス</div></a>
-        <a href="../Menu/index.html"><div class="ja-row-content">制作事例</div></a>
-        <a href="../Works/index.html"><div class="ja-row-content">価格表</div></a>
+				<a href="../Works/index.html"><div class="ja-row-content">価格表</div></a>
+        <a href="https://blog.moweeb.com" target="_blank" ><div class="ja-row-content">ブログ</div></a>
         <a href="index.php"><div class="ja-row-content currentPage">連絡先</div></a>
       </div>
     </div>
